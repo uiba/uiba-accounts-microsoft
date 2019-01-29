@@ -22,21 +22,7 @@ if (Meteor.isClient) {
     /**
      *
      */
-    console.log("loginWithMicrosoft");
-
     var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-    var callbackModifier = function(callback) {
-      return function (credentialTokenOrError) {
-        if(credentialTokenOrError && credentialTokenOrError instanceof Error) {
-          callback && callback(credentialTokenOrError);
-        } else {
-          console.log("credentialTokenOrError", credentialTokenOrError)
-          Accounts.oauth.tryLoginAfterPopupClosed(credentialTokenOrError, callback);
-        }
-      };
-    };
-
-    var credentialRequestCompleteCallback = callbackModifier(callback);
     Microsoft.requestCredential(options, credentialRequestCompleteCallback);
   };
 
