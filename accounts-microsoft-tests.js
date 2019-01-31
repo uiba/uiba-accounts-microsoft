@@ -2,7 +2,7 @@
 import { Tinytest } from "meteor/tinytest";
 
 // Import and rename a variable exported by accounts-microsoft.js.
-import { name as packageName } from "meteor/uiba:accounts-microsoft";
+import { name as packageName } from "meteor/uibalabs:accounts-microsoft";
 
 // Write your tests here!
 // Here is an example.
